@@ -1,7 +1,8 @@
 # The Quiet Gallery
 
-[![make.fun bounty](https://img.shields.io/badge/make.fun-bounty-4fae8f)](https://make.fun/bounty/best-stealth-game-20261121-1759)
-[![Stealth game](https://img.shields.io/badge/genre-stealth-e0a458)](https://make.fun/bounty/best-stealth-game-20261121-1759)
+[![make.fun · best-stealth-game-20261121-1759](https://make.fun/badge/best-stealth-game-20261121-1759.svg)](https://make.fun/bounty/best-stealth-game-20261121-1759?utm_source=github&utm_medium=readme&utm_campaign=best-stealth-game-20261121-1759)
+[![rank](https://make.fun/badge/best-stealth-game-20261121-1759/Rudhay863/best-stealth-game-20261121-1759/rank.svg)](https://make.fun/bounty/best-stealth-game-20261121-1759/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=best-stealth-game-20261121-1759)
+[![reward](https://make.fun/badge/best-stealth-game-20261121-1759/Rudhay863/best-stealth-game-20261121-1759/reward.svg)](https://make.fun/bounty/best-stealth-game-20261121-1759?utm_source=github&utm_medium=readme&utm_campaign=best-stealth-game-20261121-1759)
 
 A top-down stealth game: Wren the courier crosses the Vesper Gallery at night, lifts the ledger pages, and slips out the service exit unseen — past guards with lantern vision cones, crates that block sight, bushes to hide in, and shadow floor where guards see half as far.
 
