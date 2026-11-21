@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Quiet Gallery — a stealth game</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div>
+        <h1>The Quiet Gallery</h1>
+        <p class="sub" id="level-name">The Vesper Gallery — Night Wing</p>
+      </div>
+      <button class="secondary" id="btn-mute" type="button">Sound: on</button>
+    </header>
+
+    <section class="hud" aria-label="Game status">
+      <div class="hud-cell">
+        <p class="label">Alert level</p>
+        <p class="value" id="alert-value">Calm</p>
+        <div class="meter"><div class="meter-fill" id="alert-fill"></div></div>
+      </div>
+      <div class="hud-cell">
+        <p class="label">Time</p>
+        <p class="value" id="timer-value">00:00</p>
+      </div>
+      <div class="hud-cell">
+        <p class="label">Ledger pages</p>
+        <p class="value" id="intel-value">0 / 4</p>
+      </div>
+      <div class="hud-cell">
+        <p class="label">Objective</p>
+        <p class="value" id="objective-value">Reach the EXIT unseen</p>
+      </div>
+    </section>
+
+    <main class="stage">
+      <canvas id="game-canvas" width="960" height="608" aria-label="Top-down view of the gallery level"></canvas>
+
+      <div class="overlay" id="screen-start">
+        <div class="panel-card">
+          <h2>The Quiet Gallery</h2>
+          <p class="objective">Wren the courier has one night to cross the Vesper Gallery, lift the ledger pages, and slip out the service exit — unseen.</p>
+          <p>Guards patrol with lantern cones. Crates block their sight, bushes hide you, and the dim shadow floor halves how far they can see. Get spotted and the alarm chases you down.</p>
+          <ul class="controls-list">
+            <li><b>WASD or arrow keys</b> — move (hold <b>Shift</b> to sneak, slower and harder to spot)</li>
+            <li><b>Click the floor</b> — walk to that spot</li>
+            <li><b>Esc or P</b> — pause · <b>R</b> — restart after being caught · <b>M</b> — mute</li>
+          </ul>
+          <div class="button-row">
+            <button id="btn-start" type="button">Start the night</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay" id="screen-pause" hidden>
+        <div class="panel-card">
+          <h2>Paused</h2>
+          <p>The gallery waits. The guards keep their rounds in your head.</p>
+          <div class="button-row">
+            <button id="btn-resume" type="button">Resume</button>
+            <button class="secondary" id="btn-restart-pause" type="button">Restart level</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay" id="screen-caught" hidden>
+        <div class="panel-card">
+          <h2>Caught</h2>
+          <p id="caught-stats"></p>
+          <div class="button-row">
+            <button id="btn-retry" type="button">Try again</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay" id="screen-win" hidden>
+        <div class="panel-card">
+          <h2>Out unseen</h2>
+          <p id="win-stats"></p>
+          <p>Ghost means no alarm and every page. Shadow means no alarm. Spotted means the gallery knows you were there.</p>
+          <div class="button-row">
+            <button id="btn-again" type="button">Play again</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="legend">
+        <span><i class="swatch swatch-cone"></i> guard vision cone</span>
+        <span><i class="swatch swatch-crate"></i> crate — blocks sight</span>
+        <span><i class="swatch swatch-bush"></i> bush — hiding spot</span>
+        <span><i class="swatch swatch-shadow"></i> shadow — guards see half as far</span>
+        <span><i class="swatch swatch-exit"></i> exit</span>
+      </div>
+      <p class="footnote">An original game: no borrowed names, art, or music. All sound is synthesized in your browser. <span class="key">WASD / arrows</span> to move, <span class="key">Shift</span> to sneak, <span class="key">click</span> to walk somewhere, <span class="key">Esc</span> to pause.</p>
+    </footer>
+  </div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

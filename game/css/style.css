@@ -1,0 +1,300 @@
+/* Hallmark stamp: theme custom (night museum, warm amber + teal) · genre playful · shape Workbench · signature: the live level with vision cones behind the start panel · critique: none yet · waived: none */
+:root {
+  --bg: #141210;
+  --panel: #1e1b17;
+  --panel-edge: #3a332a;
+  --ink: #ece4d3;
+  --ink-dim: #b3a893;
+  --amber: #e0a458;
+  --amber-deep: #b97f35;
+  --teal: #4fae8f;
+  --teal-dim: #2e6b58;
+  --alert: #d9553f;
+  --alert-deep: #8f2f1f;
+  --shadow-zone: #1b1a24;
+  --focus: #f2c879;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+  --radius: 10px;
+  --measure: 1024px;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.page {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 20px 16px 32px;
+}
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.masthead h1 {
+  font-family: var(--font-display);
+  font-size: 30px;
+  line-height: 1.1;
+  margin: 0;
+  color: var(--ink);
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.masthead .sub {
+  margin: 0;
+  color: var(--ink-dim);
+  font-size: 14px;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.hud-cell {
+  background: var(--panel);
+  border: 1px solid var(--panel-edge);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  min-width: 0;
+}
+
+.hud-cell .label {
+  font-size: 13px;
+  color: var(--ink-dim);
+  margin: 0;
+}
+
+.hud-cell .value {
+  font-size: 19px;
+  font-weight: 650;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.meter {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--shadow-zone);
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--teal);
+  transition: width 150ms linear, background-color 150ms linear;
+}
+
+.meter-fill.wary {
+  background: var(--amber);
+}
+
+.meter-fill.alarm {
+  background: var(--alert);
+}
+
+.stage {
+  position: relative;
+  border: 1px solid var(--panel-edge);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #0e0d0b;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 13, 11, 0.82);
+  padding: 24px;
+}
+
+.overlay[hidden] {
+  display: none;
+}
+
+.panel-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-edge);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  max-width: 520px;
+  text-align: center;
+}
+
+.panel-card h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.15;
+  margin: 0 0 8px;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.panel-card p {
+  margin: 0 0 12px;
+  color: var(--ink-dim);
+}
+
+.panel-card .objective {
+  color: var(--ink);
+}
+
+.controls-list {
+  text-align: left;
+  margin: 0 auto 16px;
+  max-width: 380px;
+  padding-left: 20px;
+  color: var(--ink-dim);
+  font-size: 14px;
+}
+
+.controls-list li {
+  margin-bottom: 4px;
+}
+
+.controls-list b {
+  color: var(--ink);
+}
+
+button {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 650;
+  color: #1a1409;
+  background: var(--amber);
+  border: 1px solid var(--amber-deep);
+  border-radius: var(--radius);
+  padding: 10px 22px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--focus);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--panel-edge);
+}
+
+button.secondary:hover {
+  background: var(--panel);
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footnote {
+  margin-top: 14px;
+  color: var(--ink-dim);
+  font-size: 13px;
+}
+
+.footnote .key {
+  color: var(--ink);
+}
+
+.legend {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  color: var(--ink-dim);
+  font-size: 13px;
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid var(--panel-edge);
+}
+
+.swatch-cone {
+  background: var(--teal);
+  opacity: 0.55;
+}
+
+.swatch-crate {
+  background: #6b5636;
+}
+
+.swatch-bush {
+  background: #3f6b3a;
+}
+
+.swatch-shadow {
+  background: var(--shadow-zone);
+}
+
+.swatch-exit {
+  background: var(--amber);
+}
+
+@media (max-width: 640px) {
+  .hud {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .masthead h1 {
+    font-size: 24px;
+  }
+
+  .panel-card {
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meter-fill {
+    transition: none;
+  }
+}
